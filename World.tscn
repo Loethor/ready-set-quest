@@ -1,51 +1,26 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://test_car_with_wheels.tscn" type="PackedScene" id=1]
-[ext_resource path="res://road.tscn" type="PackedScene" id=2]
-
-[sub_resource type="CubeMesh" id=1]
-size = Vector3( 300, 2, 300 )
-subdivide_width = 100
-subdivide_height = 100
-
-[sub_resource type="OpenSimplexNoise" id=4]
-
-[sub_resource type="NoiseTexture" id=5]
-width = 2048
-height = 2048
-seamless = true
-noise = SubResource( 4 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.321569, 0.717647, 0.180392, 1 )
-albedo_texture = SubResource( 5 )
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 150, 1, 150 )
+[ext_resource path="res://bigpencil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://wowworld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bigpencil.gd" type="Script" id=4]
 
 [node name="World" type="Spatial"]
 
-[node name="Floor" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 2 )
-
 [node name="test_car_with_wheels" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4091, 0.193985, -42.623 )
 
-[node name="road" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.212132, 0, 0.176777, 0, 1, 0, -0.212132, 0, 0.176777, -10, 0, -10 )
+[node name="Position3D" type="Position3D" parent="test_car_with_wheels"]
+transform = Transform( -1, -4.37114e-08, 7.57103e-08, 0, 0.866026, 0.5, -8.74228e-08, 0.5, -0.866025, 0, 0, 0 )
 
-[node name="Position3D" type="Position3D" parent="."]
-transform = Transform( 0.707107, -0.612373, 0.353553, 0, 0.5, 0.866025, -0.707107, -0.612373, 0.353553, 0, 0, 0 )
-
-[node name="Camera" type="Camera" parent="Position3D"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
-near = 5.0
+[node name="Camera" type="Camera" parent="test_car_with_wheels/Position3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
+near = 1.0
 far = 300.0
+
+[node name="alpha_map" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41881, 3.88436, -12.2001 )
+
+[node name="new_try" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 56.5399, 0.363383, -27.742 )
+script = ExtResource( 4 )

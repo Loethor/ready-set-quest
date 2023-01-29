@@ -10,19 +10,21 @@ points = PoolVector3Array( 1.26444, 0.261797, 0.847211, 1.26444, 0.0828083, 0.84
 script = ExtResource( 2 )
 
 [node name="back_left" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694384, 0.421217, -1.41282 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694384, 0.377025, -1.41282 )
+use_as_traction = true
 wheel_radius = 0.375
-wheel_rest_length = 0.05
+wheel_rest_length = 0.25
 wheel_friction_slip = 10.0
-suspension_travel = 0.05
+suspension_travel = 0.25
 suspension_stiffness = 70.0
 
 [node name="back_right" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691207, 0.421217, -1.41282 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691207, 0.377025, -1.41282 )
+use_as_traction = true
 wheel_radius = 0.375
-wheel_rest_length = 0.05
+wheel_rest_length = 0.25
 wheel_friction_slip = 10.0
-suspension_travel = 0.05
+suspension_travel = 0.25
 suspension_stiffness = 70.0
 
 [node name="Car" parent="." index="2"]
@@ -33,23 +35,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00159533, 0.912094, 0.054585
 shape = SubResource( 1 )
 
 [node name="front_left" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694384, 0.421217, 1.49779 )
-use_as_traction = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694384, 0.377025, 1.49779 )
 use_as_steering = true
 wheel_roll_influence = 0.9
 wheel_radius = 0.375
-wheel_rest_length = 0.05
+wheel_rest_length = 0.25
 wheel_friction_slip = 10.0
-suspension_travel = 0.05
+suspension_travel = 0.25
 suspension_stiffness = 70.0
 
 [node name="front_right" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691207, 0.421217, 1.49779 )
-use_as_traction = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691207, 0.377025, 1.49779 )
 use_as_steering = true
 wheel_roll_influence = 0.9
 wheel_radius = 0.375
-wheel_rest_length = 0.05
+wheel_rest_length = 0.25
 wheel_friction_slip = 10.0
-suspension_travel = 0.05
+suspension_travel = 0.25
 suspension_stiffness = 70.0
