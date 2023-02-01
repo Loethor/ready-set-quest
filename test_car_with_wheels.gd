@@ -1,11 +1,25 @@
 extends VehicleBody
 
-
 # Declare member variables here. Examples:
 export var player_index = 0
 var max_torque = 500
 var max_rpm = 500
 
+# Lap stuff
+var gate_count = 0
+var last_gate_number = 0
+export var total_gates = 0
+
+func pass_gate(gate_number):
+    if gate_number == (last_gate_number + 1) % total_gates:
+        last_gate_number = gate_number
+        gate_count += 1
+        print("gate passed!", gate_number, " Laps: ", get_laps())
+
+func get_laps():
+    return int(gate_count / total_gates)
+
+# End lap stuff
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,11 +42,11 @@ func _physics_process(delta):
     $back_right.engine_force = acceleration * max_torque * (1 - rpm / max_rpm)
     # brake when not doing acceleration
     if acceleration == 0:
-        $front_left.brake = 5
-        $front_right.brake = 5
+        $back_left.brake = 5
+        $back_right.brake = 5
     else:
-        $front_left.brake = 0
-        $front_right.brake = 0
+        $back_left.brake = 0
+        $back_right.brake = 0
         
         
     var new_steer = Input.get_axis("steer_right", "steer_left")
