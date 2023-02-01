@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://test_car_with_wheels.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bigpencil.tscn" type="PackedScene" id=2]
 [ext_resource path="res://wowworld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bigpencil.gd" type="Script" id=4]
+[ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://Wheat.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Spatial"]
 
@@ -11,12 +13,15 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4091, 0.193985, -42.623 )
 
 [node name="Position3D" type="Position3D" parent="test_car_with_wheels"]
-transform = Transform( -1, -4.37114e-08, 7.57103e-08, 0, 0.866026, 0.5, -8.74228e-08, 0.5, -0.866025, 0, 0, 0 )
+transform = Transform( -4.37114e-08, -0.5, 0.866025, 0, 0.866026, 0.5, -1, 2.18557e-08, -3.78552e-08, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="test_car_with_wheels/Position3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
 near = 1.0
 far = 300.0
+
+[node name="Player" type="Node" parent="test_car_with_wheels"]
+script = ExtResource( 5 )
 
 [node name="alpha_map" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41881, 3.88436, -12.2001 )
@@ -24,3 +29,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41881, 3.88436, -12.2001 )
 [node name="new_try" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 56.5399, 0.363383, -27.742 )
 script = ExtResource( 4 )
+
+[node name="Wheat" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -59 )
+
+[node name="Wheat2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61 )
+
+[node name="Wheat3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -59 )
+
+[node name="Wheat4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -61 )
+
+[node name="Wheat5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63 )
+
+[node name="Wheat6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -63 )
