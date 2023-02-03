@@ -5,7 +5,7 @@
 [ext_resource path="res://wowworld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bigpencil.gd" type="Script" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
-[ext_resource path="res://Wheat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://wheat.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Spatial"]
 
@@ -30,20 +30,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41881, 3.88436, -12.2001 )
 transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 56.5399, 0.363383, -27.742 )
 script = ExtResource( 4 )
 
-[node name="Wheat" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -59 )
+[node name="wheat" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, -66 )
 
-[node name="Wheat2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61 )
+[node name="wheat2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.7, -66 )
 
-[node name="Wheat3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -59 )
+[node name="wheat3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, -64 )
 
-[node name="Wheat4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -61 )
+[node name="wheat4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.7, -64 )
 
-[node name="Wheat5" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63 )
+[node name="wheat5" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.7, -62 )
 
-[node name="Wheat6" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -63 )
+[node name="wheat6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, -62 )
