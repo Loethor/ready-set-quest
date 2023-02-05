@@ -11,7 +11,7 @@ export(PackedScene) var wheat_collector_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_wheat_collector()
+	SignalBus.connect("wheat_collector_collectible_picked", self, "_on_wheat_collectible_collected")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,7 +45,6 @@ func _physics_process(delta):
 		
 	steering = lerp(steering, new_steer * 0.8, 5 * delta)
 
-func add_wheat_collector():
-	var collector = wheat_collector_scene.instance()
+func _on_wheat_collectible_collected(collector):
 	add_child(collector)
 	

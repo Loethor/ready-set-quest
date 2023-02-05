@@ -14,6 +14,10 @@ config/name="ready_set_quest"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SignalBus="*res://SignalBus.tscn"
+
 [editor]
 
 version_control_autoload_on_startup=true
